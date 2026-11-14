@@ -23,12 +23,6 @@ Uma pasta com os áudios e um `songs.tsv` em UTF-8, uma música por linha, separ
 A primeira resposta é a que aparece no reveal. Use nomes neutros (`01.wav`): o nome do
 arquivo viaja no pacote da rodada. Só WAV/AIFF/AU tocam sem biblioteca extra.
 
-## Testar sem o Pitiupi
-
-    cd plugins/musicquiz
-    standalone/build.sh test    # testes do motor
-    standalone/build.sh demo    # host + Ana + Bia na mesma JVM, com 4 notas de teste
-
 ## Estrutura
 
 - `src/pitiupi/musicquiz/` — jogo (motor, telas, áudio). Não depende do núcleo.
@@ -47,13 +41,3 @@ arquivo viaja no pacote da rodada. Só WAV/AIFF/AU tocam sem biblioteca extra.
 - Como UDP perde pacotes, o host reenvia o estado a cada 2s e o jogador reenvia a entrada na
   sala e a resposta até o host confirmar.
 
-Limites do sigilo: o Pitiupi não tem criptografia, então quem capturar pacotes da rede ainda
-poderia ler uma resposta; e nada impede um cliente adulterado de se passar pelo host.
-Para uma sala de aula isso basta; não é segurança contra um atacante determinado.
-
-## Limitações conhecidas
-
-- A ponte nunca foi compilada contra o núcleo real (o zip tinha só `plugins/chat`); foi
-  escrita copiando as chamadas do `ChatPlugin`/`ChatPanel` e conferida contra stubs.
-- Host e jogador no **mesmo PC** não funcionam: TCP para o próprio host não é suportado pelo núcleo.
-- Não usa o `PluginSessionWorkspace`/abas de sessão do chat; a aba é um painel simples.
