@@ -8,8 +8,8 @@ quando todos confirmam ou o tempo acaba, e então vem o reveal com respostas e p
 
 1. Copie a pasta `plugins/musicquiz` para `plugins/` do repositório.
 2. Acrescente o conteúdo de `registry-entry.json` como mais uma entrada em
-   `plugins.registry.json` (o arquivo estava fora do zip que recebi, por isso não editei).
-3. Na raiz do repositório: `./scripts/pitiupi.sh run --all` (ou `--plugins chat,musicquiz`).
+   `plugins.registry.json`.
+3. Na raiz do repositório: `./scripts/pitiupi.sh run --all`.
 
 Abra a aba **Music Quiz**; cada pessoa escolhe **Host** ou **Jogador**.
 
