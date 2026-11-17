@@ -1,7 +1,0 @@
-{
-  "id": "musicquiz",
-  "dir": "plugins/musicquiz",
-  "build": "ant",
-  "jar": "dist/pitiupi.musicquiz.jar",
-  "menuCategory": "Jogos"
-}
